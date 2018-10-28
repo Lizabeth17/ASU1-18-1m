@@ -61,7 +61,7 @@ try:
             sk=s
             try:
                 reqst = "https://где-ударение.рф/в-слове-" + s + "/"
-                print(reqst)
+                #print(reqst)
                 page_text1 = requests.get(reqst)
                 soup = BeautifulSoup(page_text1.text, "html.parser")
                 soup_text = soup.find(class_='rule')
@@ -125,8 +125,8 @@ while (j<len(stih2)):
 
 
 
-print(stih2)
-print("RAZMER: " + razmer)
+#print(stih2)
+#print("RAZMER: " + razmer)
 
 
 
@@ -176,8 +176,8 @@ if isTreh:
     #print("Процент совпадения с амфибрахием: " + search_partial_text(razmer, amfib))
     #print("Процент совпадения с дактилем: " + search_partial_text(razmer, daktil))
 else:
-    print("Четных: {}".format(chet))
-    print("Нечетных: {}".format(nechet))
+    #print("Четных: {}".format(chet))
+    #print("Нечетных: {}".format(nechet))
     if chet > nechet:
         print(cols_res + "ямбом")
     else:
