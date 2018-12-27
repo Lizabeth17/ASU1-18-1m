@@ -4,7 +4,7 @@ import matplotlib.dates as mdates
 import datetime as dt
 import csv
 
-def treh_hist(_x, _y, _z):
+def treh_hist(_x, _y, _z, flname):
     try:
         dpi = 80
         fig = plt.figure(dpi = dpi, figsize = (512 / dpi, 384 / dpi) )
@@ -29,7 +29,9 @@ def treh_hist(_x, _y, _z):
         plt.xticks(xs, data_names)
 
         plt.legend(loc='upper right') #где писать легенду
-        plt.show()
+        #plt.show()
+        plt.savefig(flname)
     except MatplotlibDeprecationWarning:
         print('')
     return True
+
