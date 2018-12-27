@@ -4,7 +4,7 @@ import matplotlib.dates as mdates
 import datetime as dt
 import csv
 
-def chet_nechet_hist(_x, _y):
+def chet_nechet_hist(_x, _y, flname):
     try:
         dpi = 80
         fig = plt.figure(dpi = dpi, figsize = (512 / dpi, 384 / dpi) )
@@ -26,7 +26,9 @@ def chet_nechet_hist(_x, _y):
         plt.xticks(xs, data_names)
 
         plt.legend(loc='upper right') #где писать легенду
-        plt.show()
+        #plt.show()
+        plt.savefig(flname)
     except MatplotlibDeprecationWarning:
         print('')
     return True
+
