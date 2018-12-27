@@ -1,28 +1,26 @@
-from parserP import stih
+from parserP import stih_load
 
 def cols(stih):
-
     count=0
-
     if stih != 'false':
-
         while stih.count("\n\n") != 0:
             stih = stih.replace("\n\n", "\n")
-
         smas = stih.split("\n")
-
+        count_strok = 0
         count_long_strok = 0
         for smasi in smas:
             if len(smasi) > 70:
                 count_long_strok = count_long_strok + 1
-
-        if (len(smas)//2 < count_long_strok):
-            return 'false'
+        for smasi in smas:
+            if smasi != "":
+                count_strok = count_strok + 1
+        if (count_strok//2 < count_long_strok):
+            return False
         else:
-            if len(smas) == 14:
-                return "Скорей всего, это сонет, написанный "
+            if count_strok == 14:
+                return "сонет 14 строк"
             else:
                 if len(smas) > 200:
-                    return 'false'
+                    return False
                 else:
-                    return "Скорей всего, это стихотворение, написанное "
+                    return "стихотворение " + str(count_strok) + " строк"
